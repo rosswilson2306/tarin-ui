@@ -3,11 +3,18 @@ import { Snippet } from "@heroui/snippet";
 import { Code } from "@heroui/code";
 import { button as buttonStyles } from "@heroui/theme";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
+import SitesList from "./components/sites-list.component";
 
-export default function Home() {
+import { siteConfig } from "@/config/site";
+import { title } from "@/components/primitives";
+import { GithubIcon } from "@/components/icons";
+import TarinClient from "@/clients/tarin";
+import { Site } from "@/clients/tarin/tarin.types";
+
+export default async function Home() {
+  const client = new TarinClient();
+  const sites: Site[] = await client.request({ path: "/sites" });
+
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
       <div className="inline-block max-w-xl text-center justify-center">
@@ -17,23 +24,10 @@ export default function Home() {
         <span className={title()}>
           websites regardless of your design experience.
         </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </div>
+        <SitesList sites={sites} />
       </div>
 
       <div className="flex gap-3">
-        <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
-        >
-          Documentation
-        </Link>
         <Link
           isExternal
           className={buttonStyles({ variant: "bordered", radius: "full" })}
