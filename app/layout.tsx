@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { button as buttonStyles } from "@heroui/theme";
 
 import { Providers } from "./providers";
+import SidebarMenu from "./components/sidebar-menu.component";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
@@ -46,8 +47,9 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
+            <main className="container w-full flex pt-16 px-6 flex-grow gap-8">
+              <SidebarMenu />
+              <div className="">{children}</div>
             </main>
             <footer className="w-full flex items-center justify-center py-3">
               <div className="flex gap-3">
