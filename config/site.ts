@@ -16,6 +16,6 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
+    github: "https://github.com/rosswilson2306/tarin",
   },
 };

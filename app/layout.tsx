@@ -51,7 +51,7 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
+                href="https://github.com/rosswilson2306/tarin"
                 title="heroui.com homepage"
               >
                 <p className="text-primary">Tarin</p>
