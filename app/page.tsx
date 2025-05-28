@@ -9,16 +9,16 @@ export default async function Home() {
   const sites: Site[] = await client.request({ path: "/sites" });
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-3xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-        <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <SitesList sites={sites} />
+    <section className="flex flex-col items-center justify-center gap-4">
+      <div className="w-full">
+        <h1 className={title()}>
+          <span className="w-full inline-block">
+            Browse or search your&nbsp;
+          </span>
+          <span className={title({ color: "violet" })}>websites</span>
+        </h1>
       </div>
+      <SitesList sites={sites} />
     </section>
   );
 }
