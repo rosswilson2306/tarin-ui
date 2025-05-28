@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <section className="flex flex-col items-center justify-center gap-4">
-      <div className="w-full">
+      <div className="w-full mb-4">
         <h1 className={title()}>
           <span className="w-full inline-block">
             Browse or search your&nbsp;

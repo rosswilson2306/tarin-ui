@@ -53,10 +53,13 @@ export const subtitle = tv({
 });
 
 export const listItem = tv({
-  base: "w-full md:w-1/2 my-2 text-2xl lg:text-2xl text-default-600 block max-w-full",
+  base: "w-full md:w-1/2 my-2 text-2xl lg:text-2xl text-default-600 flex items-center max-w-full",
   variants: {
     fullWidth: {
       true: "!w-full",
+    },
+    between: {
+      true: "flex justify-between",
     },
   },
   defaultVariants: {
