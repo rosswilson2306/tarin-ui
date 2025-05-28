@@ -2,12 +2,14 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
+import { button as buttonStyles } from "@heroui/theme";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import Navbar from "@/components/navbar";
+import { GithubIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: {
@@ -48,14 +50,19 @@ export default function RootLayout({
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://github.com/rosswilson2306/tarin"
-                title="heroui.com homepage"
-              >
-                <p className="text-primary">Tarin</p>
-              </Link>
+              <div className="flex gap-3">
+                <Link
+                  isExternal
+                  className={buttonStyles({
+                    variant: "bordered",
+                    radius: "full",
+                  })}
+                  href={siteConfig.links.github}
+                >
+                  <GithubIcon size={20} />
+                  GitHub
+                </Link>
+              </div>
             </footer>
           </div>
         </Providers>
